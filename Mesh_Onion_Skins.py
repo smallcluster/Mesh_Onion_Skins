@@ -1172,7 +1172,6 @@ def format_os_material(mat, color):
     mat.diffuse_color = color  # (0.1, 0.1, 1, 0.3)
     mat.roughness = 1
     mat.blend_method = 'BLEND'
-    mat.shadow_method = 'NONE'
     mat.show_transparent_back = False
     mat.use_nodes = True
     nodes = get_material_BSDFs(mat)  # "Principled BSDF"
@@ -1227,7 +1226,6 @@ def dublicate_own_material(obj_name):
             bpy.data.materials.new(MAT_PREFIX + obj_name + '_' + SUFFIX_own)
             mat = bpy.data.materials[MAT_PREFIX + obj_name + '_' + SUFFIX_own]
         mat.blend_method = 'BLEND'
-        mat.shadow_method = 'NONE'
         mat.show_transparent_back = False
         mat.use_nodes = True
     return mat
