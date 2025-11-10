@@ -671,7 +671,8 @@ class OS_PT_UI_Panel(Panel):
     bl_region_type = "UI"
     bl_category = "Animation"
 
-    def __init__(self):
+    def __init__(self, /, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         OS_Initialization()
 
     @classmethod
@@ -1972,7 +1973,8 @@ class GPU_OT_Draw_Skins(Operator):
     bl_description = "Draw onion skins in 3D Viewport"
     bl_options = {'REGISTER'}
 
-    def __init__(self):
+    def __init__(self, /, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.sc = bpy.context.scene.onion_skins_scene_props
         self.frames_count = None
         self.before = None
@@ -2430,7 +2432,8 @@ class OS_OT_CreateUpdate_Skins(Operator):
     processing = False
     job_done = False
 
-    def __init__(self):
+    def __init__(self, /, *args, **kwargs):
+        super().__init__(*args, **kwargs)
         self.sc = bpy.context.scene.onion_skins_scene_props
         self.params = bpy.context.window_manager.onionSkinsParams
         self.obj = bpy.context.active_object
